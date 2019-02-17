@@ -1,0 +1,80 @@
+
+{
+    "Players":[
+        {
+            "Name":"Dexter Drake",
+            "SubTitle": "the Magician",
+            "Sanity": 5,
+            "Stamina": 5,
+            "Home": "Ye Old Magick Shoppe",
+            "Focus":2,
+            "Possessions":[
+                { "Type": "Money", "Value":"","Count":5},
+                { "Type": "Spell", "Name":"Shrivelling","Count":1},
+                { "Type": "CommonItem", "Name":"","Count":1},
+                { "Type": "UniqueItem", "Name":"","Count":1},
+                { "Type": "Spell", "Name":"","Count":2},
+                { "Type": "Skill", "Name":"","Count":1}
+            ],
+            "Gift":{
+                "Phase": "Any",
+                "Functino":"DrawTwoSpell",
+                "Text": "Any Phase: Whenever \"The Great\" Drake draws one or more cards from the Spell deck, he draws one extra card and then discards on of the cards."
+            },
+            "Speed":[2,3,4,5],
+            "Sneak":[4,3,2,1],
+
+            "Fight":[1,2,3,4],
+            "Will":[3,2,1,0],
+
+            "Lore":[2,3,4,5],
+            "Luck":[3,2,1,0],
+            "BackStory":"Magic pew pew pew"
+        }
+    ],
+    "CommonItems":[
+        {
+            "Name":"Cavalry Saber",
+            "Type":"Physical Weapon",
+            "Check":"Combat",
+            "Value":2,
+            "Price":3,
+            "Hands":1
+        },
+        {
+            "Name":"Ancient Tome",
+            "Type":"Tome",
+            "Discard":false,
+            "Exhaust":true,
+            "Check":"Lore",
+            "Value":-1,
+            "UseCost":"movement 2",
+            "Action":"draw 1 spell",
+            "Price":4,
+            "Hands":0
+        },
+        {
+            "Name":"Food",
+            "Discard":true,
+            "Exhaust":false,
+            "Phase":"Any",
+            "Type":"",
+            "Check":"",
+            "Value":0,
+            "UseCost":"",
+            "Action":"reduce_stamina_loss 1",
+            "Price":1,
+            "Hands":0
+        }
+    ],
+    "Spells":[
+        {
+            "Name":"Shivelling",
+            "CastModifier":-1,
+            "SanityCost":1,
+            "Check":"Combat",
+            "Value":6,
+            "Hands":1
+        }
+    ]
+}
