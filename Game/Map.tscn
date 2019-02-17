@@ -1,9 +1,10 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://CameraMovement.gd" type="Script" id=1]
-[ext_resource path="res://assets/map/Arkham_HorrorMap_0.jpg" type="Texture" id=2]
+[ext_resource path="res://icon.png" type="Texture" id=2]
+[ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 
-[node name="node" type="Node"]
+[node name="node" type="Node" index="0"]
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
@@ -43,8 +44,18 @@ marginY = 200.0
 
 [node name="Sprite" type="Sprite" parent="." index="1"]
 
-position = Vector2( 550, 300 )
-scale = Vector2( 0.223154, 0.223154 )
+position = Vector2( 302.486, 297.838 )
+scale = Vector2( 9.06545, 8.89294 )
 texture = ExtResource( 2 )
+
+[node name="Node" parent="." index="2" instance=ExtResource( 3 )]
+
+margin_left = 643.0
+margin_top = 151.0
+margin_right = 643.0
+margin_bottom = 151.0
+rect_scale = Vector2( 0.2, 0.2 )
+_sections_unfolded = [ "Rect" ]
+Name = "asdasd"
 
 
