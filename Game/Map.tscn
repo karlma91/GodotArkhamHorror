@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://CameraMovement.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Monster.tscn" type="PackedScene" id=4]
 
 [node name="node" type="Node" index="0"]
 
@@ -48,14 +49,40 @@ position = Vector2( 302.486, 297.838 )
 scale = Vector2( 9.06545, 8.89294 )
 texture = ExtResource( 2 )
 
-[node name="Node" parent="." index="2" instance=ExtResource( 3 )]
+[node name="Amanda" parent="." index="2" instance=ExtResource( 3 )]
 
-margin_left = 643.0
-margin_top = 151.0
-margin_right = 643.0
-margin_bottom = 151.0
+margin_left = 1052.0
+margin_top = 478.0
+margin_right = 1052.0
+margin_bottom = 478.0
 rect_scale = Vector2( 0.2, 0.2 )
-_sections_unfolded = [ "Rect" ]
-Name = "asdasd"
+
+[node name="Carolyn" parent="." index="3" instance=ExtResource( 3 )]
+
+margin_left = 1053.0
+margin_top = 380.0
+margin_right = 1053.0
+margin_bottom = 380.0
+rect_scale = Vector2( 0.2, 0.2 )
+Name = "Carolyn Fern"
+Title = "the Psychologist"
+Home = "Arkham Asylum"
+SpecialTitle = "Psycchology"
+SpecialText = "Upkeep: Dr. Fern mey restore 1 sanity to herself or another character in her location"
+StartStamina = 4
+StartSanity = 6
+Focus = 2
+Speed = 0
+Sneak = 0
+Lore = 2
+Luck = 2
+
+[node name="Monster" parent="." index="4" instance=ExtResource( 4 )]
+
+margin_left = 1071.0
+margin_top = 313.0
+margin_right = 1211.0
+margin_bottom = 443.0
+rect_scale = Vector2( 0.2, 0.2 )
 
 
