@@ -19,12 +19,16 @@ func _ready():
 #	pass
 
 
+func move_to(pos):
+	var tween= get_node("Tween")
+	var offset = rect_size*rect_scale
+	offset = offset/2
+	tween.interpolate_property(self, "rect_position",
+                get_rect().position, pos-offset, 1,
+                Tween.TRANS_SINE, Tween.EASE_IN_OUT)
+	tween.start()
+
 func _on_Button_pressed():
-#	var tween= get_node("Tween")
-#	tween.interpolate_property(self, "rect_position",
-#                get_rect().position, get_rect().position + Vector2(100, 0), 1,
-#                Tween.TRANS_LINEAR, Tween.EASE_IN_OUT)
-#	tween.start()
 	var front = get_node("Front")
 	var back = get_node("Back")
 	if front. is_visible_in_tree():

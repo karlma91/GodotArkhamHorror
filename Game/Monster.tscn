@@ -3,7 +3,7 @@
 [ext_resource path="res://Monster.gd" type="Script" id=1]
 [ext_resource path="res://icon.png" type="Texture" id=2]
 
-[node name="Monster" type="Container" index="0"]
+[node name="Monster" type="Container"]
 
 anchor_left = 0.0
 anchor_top = 0.0
@@ -18,7 +18,7 @@ mouse_default_cursor_shape = 0
 size_flags_horizontal = 1
 size_flags_vertical = 1
 script = ExtResource( 1 )
-_sections_unfolded = [ "Visibility" ]
+_sections_unfolded = [ "Rect" ]
 
 [node name="Back" type="Container" parent="." index="0"]
 
