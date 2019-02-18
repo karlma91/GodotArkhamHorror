@@ -5,7 +5,7 @@
 [ext_resource path="res://Player.tscn" type="PackedScene" id=3]
 [ext_resource path="res://Monster.tscn" type="PackedScene" id=4]
 
-[node name="node" type="Node" index="0"]
+[node name="node" type="Node"]
 
 [node name="Camera2D" type="Camera2D" parent="." index="0"]
 
