@@ -93,4 +93,8 @@ _sections_unfolded = [ "Anchor", "Rect" ]
 
 [node name="Boss" parent="." index="5" instance=ExtResource( 6 )]
 
+margin_top = 1.0
+margin_right = 480.0
+margin_bottom = 501.0
+
 
