@@ -2,7 +2,7 @@ extends Camera2D
 
 export var panSpeed = 20.0
 export var speed = 20.0
-export var zoomspeed = 100.0
+export var zoomspeed = 40.0
 export var zoommargin = 0.1
 
 export var zoomMin = 0.25
@@ -20,6 +20,9 @@ var zoomfactor = 1.0
 var zooming = false
 var is_dragging = false
 var move_to_point = Vector2()
+var dragging = false
+
+var prev_mouse_pos = Vector2()
 
 func _ready():
 	pass
@@ -35,16 +38,16 @@ func _process(delta):
 	position.x = lerp(position.x, position.x + inpx *speed * zoom.x,speed * delta)
 	position.y = lerp(position.y, position.y + inpy *speed * zoom.y,speed * delta)
 
-	if Input.is_key_pressed(KEY_CONTROL):
-		#check mousepos
-		if mousepos.x < marginX:
-			position.x = lerp(position.x, position.x - abs(mousepos.x - marginX)/marginX * panSpeed * zoom.x, panSpeed * delta)
-		elif mousepos.x > OS.window_size.x - marginX:
-			position.x = lerp(position.x, position.x + abs(mousepos.x - OS.window_size.x + marginX)/marginX *  panSpeed * zoom.x, panSpeed * delta)
-		if mousepos.y < marginY:
-			position.y = lerp(position.y, position.y - abs(mousepos.y - marginY)/marginY * panSpeed * zoom.y, panSpeed * delta)
-		elif mousepos.y > OS.window_size.y - marginY:
-			position.y = lerp(position.y, position.y + abs(mousepos.y - OS.window_size.y + marginY)/marginY * panSpeed * zoom.y, panSpeed * delta)
+#	if Input.is_action_pressed("mouse_press"):
+#		#check mousepos
+#		if mousepos.x < marginX:
+#			position.x = lerp(position.x, position.x - abs(mousepos.x - marginX)/marginX * panSpeed * zoom.x, panSpeed * delta)
+#		elif mousepos.x > OS.window_size.x - marginX:
+#			position.x = lerp(position.x, position.x + abs(mousepos.x - OS.window_size.x + marginX)/marginX *  panSpeed * zoom.x, panSpeed * delta)
+#		if mousepos.y < marginY:
+#			position.y = lerp(position.y, position.y - abs(mousepos.y - marginY)/marginY * panSpeed * zoom.y, panSpeed * delta)
+#		elif mousepos.y > OS.window_size.y - marginY:
+#			position.y = lerp(position.y, position.y + abs(mousepos.y - OS.window_size.y + marginY)/marginY * panSpeed * zoom.y, panSpeed * delta)
 	
 	#zoom in
 	zoom.x = lerp(zoom.x, zoom.x * zoomfactor, zoomspeed * delta)
@@ -57,9 +60,17 @@ func _process(delta):
 		zoomfactor = 1.0
 
 
-
-
 func _input(event):
+	
+	if event is InputEventMouseButton:
+		if event.is_pressed():
+			dragging = true
+		else:
+			dragging = false
+	elif event is InputEventMouseMotion and dragging:
+		position -= event.relative*zoom
+
+		
 	if event is InputEventMouseButton:
 		if event.is_pressed():
 			zooming = true

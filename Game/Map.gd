@@ -1,13 +1,27 @@
 extends Node
 
-# class member variables go here, for example:
-# var a = 2
-# var b = "textvar"
+var activeIndex = 1
+
 
 func _ready():
 	# Called when the node is added to the scene for the first time.
 	# Initialization here
-	pass
+	var inactives = find_node("InactivePlayers")
+	var actives = find_node("players")
+	var nums = inactives.get_child_count()
+	
+	for i in range(0, GameState.players):
+		var randplayer = inactives.get_child(0)
+		inactives.remove_child(randplayer)
+		actives.add_child(randplayer)
+	
+	var first = actives.get_child(0)
+	print(first)
+	first.find_node("ActiveCheckBox").pressed = true
+	
+	
+
+
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -20,6 +34,6 @@ func move_monster(pos):
 	
 func _input(event):
 	if event is InputEventMouseButton:
-		if event.is_pressed():
+		if event.is_action_released("mouse_press"):
 			if event.button_index == BUTTON_LEFT:
-				move_monster(event.position)
+				move_monster(get_global_mouse_position())
