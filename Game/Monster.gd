@@ -24,7 +24,7 @@ func move_to(pos):
 	var offset = rect_size*rect_scale
 	offset = offset/2
 	tween.interpolate_property(self, "rect_position",
-                get_rect().position, pos-offset, 1,
+                get_rect().position, pos-offset, 0.4,
                 Tween.TRANS_SINE, Tween.EASE_IN_OUT)
 	tween.start()
 

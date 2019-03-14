@@ -19,19 +19,49 @@ drag_margin_v_enabled = false
 script = ExtResource( 2 )
 
 [node name="Boss" parent="." instance=ExtResource( 3 )]
-margin_left = 160.0
-margin_top = -595.0
-margin_right = 640.0
-margin_bottom = -95.0
+margin_left = 275.0
+margin_top = -1585.0
+margin_right = 755.0
+margin_bottom = -1085.0
 
-[node name="Location1" parent="." instance=ExtResource( 4 )]
-position = Vector2( 100, 224 )
+[node name="Locations" type="Node" parent="."]
+editor/display_folded = true
 
-[node name="Location2" parent="." instance=ExtResource( 4 )]
-position = Vector2( 300, 224 )
+[node name="Location1" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 560, -530 )
 
-[node name="Location3" parent="." instance=ExtResource( 4 )]
-position = Vector2( 295, 100 )
+[node name="Location4" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 700, -542 )
+
+[node name="Location5" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 85, -395 )
+
+[node name="Location6" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 85, -225 )
+
+[node name="Location7" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 280, -320 )
+
+[node name="Location8" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 505, -325 )
+
+[node name="Location9" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 575, -165 )
+
+[node name="Location10" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 660, -330 )
+
+[node name="Location11" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 815, -330 )
+
+[node name="Location12" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 810, -160 )
+
+[node name="Location2" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 345, -550 )
+
+[node name="Location3" parent="Locations" instance=ExtResource( 4 )]
+position = Vector2( 145, -545 )
 
 [node name="Monster" parent="." instance=ExtResource( 5 )]
 margin_left = 105.0
@@ -41,28 +71,6 @@ margin_bottom = 230.0
 rect_scale = Vector2( 0.4, 0.4 )
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
-
-[node name="MarginContainer" type="Panel" parent="CanvasLayer"]
-anchor_left = 1.0
-anchor_right = 1.0
-anchor_bottom = 1.0
-margin_left = -360.0
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer"]
-margin_right = 360.0
-margin_bottom = 700.0
-alignment = 2
-
-[node name="HBoxContainer" type="HBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer"]
-margin_right = 360.0
-margin_bottom = 700.0
-alignment = 2
-
-[node name="players" type="VBoxContainer" parent="CanvasLayer/MarginContainer/HBoxContainer/HBoxContainer"]
-margin_right = 360.0
-margin_bottom = 700.0
-rect_min_size = Vector2( 360, 600 )
-size_flags_horizontal = 3
 
 [node name="InactivePlayers" type="Control" parent="CanvasLayer"]
 editor/display_folded = true
@@ -97,6 +105,42 @@ Sneak = 0
 Lore = 2
 Luck = 2
 
-[connection signal="selected" from="Location1" to="." method="_on_Location_selected"]
-[connection signal="selected" from="Location2" to="." method="_on_Location_selected"]
-[connection signal="selected" from="Location3" to="." method="_on_Location_selected"]
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+margin_left = 1145.0
+margin_top = -490.0
+margin_right = 1525.0
+margin_bottom = 155.0
+
+[node name="MarginContainer" type="Panel" parent="Control"]
+margin_right = 360.0
+margin_bottom = 1230.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer"]
+margin_right = 360.0
+margin_bottom = 700.0
+alignment = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control/MarginContainer/HBoxContainer"]
+margin_right = 360.0
+margin_bottom = 700.0
+alignment = 2
+
+[node name="players" type="VBoxContainer" parent="Control/MarginContainer/HBoxContainer/HBoxContainer"]
+margin_right = 360.0
+margin_bottom = 700.0
+rect_min_size = Vector2( 360, 600 )
+size_flags_horizontal = 3
+
+[connection signal="selected" from="Locations/Location1" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location4" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location5" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location6" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location7" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location8" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location9" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location10" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location11" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location12" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location2" to="." method="_on_Location_selected"]
+[connection signal="selected" from="Locations/Location3" to="." method="_on_Location_selected"]
