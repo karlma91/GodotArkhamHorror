@@ -19,9 +19,6 @@ func _ready():
 	print(first)
 	first.find_node("ActiveCheckBox").pressed = true
 	
-	
-
-
 
 #func _process(delta):
 #	# Called every frame. Delta is time since last frame.
@@ -29,11 +26,10 @@ func _ready():
 #	pass
 
 func move_monster(pos):
-	var monster = get_node("Monster")
-	monster.move_to(pos)
 	
-func _input(event):
-	if event is InputEventMouseButton:
-		if event.is_action_released("mouse_press"):
-			if event.button_index == BUTTON_LEFT:
-				move_monster(get_global_mouse_position())
+	var monster = get_node("Monster")
+	pos = pos + (monster.get_rect().size*monster.get_scale())/2 + Vector2(5,5)
+	monster.move_to(pos)
+
+func _on_Location_selected(node):
+	move_monster(node.get_position())

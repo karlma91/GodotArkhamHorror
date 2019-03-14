@@ -1,74 +1,22 @@
 [gd_scene format=2]
 
-[node name="Boss" type="Container"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 320.0
-margin_bottom = 400.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
+[node name="Boss" type="Panel"]
+margin_right = 500.0
+margin_bottom = 510.0
 hint_tooltip = "The boss"
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-_sections_unfolded = [ "Hint", "Material" ]
 
-[node name="Panel" type="Panel" parent="." index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
-margin_right = 480.0
-margin_bottom = 500.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 1
-
-[node name="Name" type="Label" parent="Panel" index="0"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Name" type="Label" parent="."]
 margin_left = 140.0
 margin_top = 80.0
 margin_right = 220.0
 margin_bottom = 100.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Yog-Sothoth"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Special" type="Label" parent="Panel" index="1"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Special" type="Label" parent="."]
 margin_left = 144.0
 margin_top = 105.0
 margin_right = 320.0
 margin_bottom = 320.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "The Key and the Gate
 while Yog-sothoth stirs in his slumber the difficulty is close or seal a gate increases by 1.
 
@@ -76,127 +24,44 @@ in addition any investigator list in time ad space is devoured.
 Start of Battle
 Any investigator with no gate trophies is devoured."
 autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Special2" type="Label" parent="Panel" index="2"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Special2" type="Label" parent="."]
 margin_left = 10.0
 margin_top = 120.0
 margin_right = 139.0
 margin_bottom = 270.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Worshippers
 Yog-Sothot's worshippers have powerfullmagic abilities. Cultists have Magical Immunity and a combat rating of -1.
 "
 autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="HSlider" type="HSlider" parent="Panel" index="3"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="HSlider" type="HSlider" parent="."]
 margin_left = 30.0
 margin_top = 450.0
 margin_right = 430.0
 margin_bottom = 466.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-focus_mode = 2
-mouse_filter = 0
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 0
-min_value = 0.0
-max_value = 100.0
-step = 1.0
-page = 0.0
-value = 0.0
-exp_edit = false
-rounded = false
-editable = true
-tick_count = 0
-ticks_on_borders = false
-focus_mode = 2
 
-[node name="Defence" type="Label" parent="Panel" index="4"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Defence" type="Label" parent="."]
 margin_left = 40.0
 margin_top = 90.0
 margin_right = 80.0
 margin_bottom = 104.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "-5"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Immunity" type="Label" parent="Panel" index="5"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Immunity" type="Label" parent="."]
 margin_left = 360.0
 margin_top = 90.0
 margin_right = 475.0
 margin_bottom = 104.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Magical Immunity"
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
 
-[node name="Attack" type="Label" parent="Panel" index="6"]
-
-anchor_left = 0.0
-anchor_top = 0.0
-anchor_right = 0.0
-anchor_bottom = 0.0
+[node name="Attack" type="Label" parent="."]
 margin_left = 340.0
 margin_top = 120.0
 margin_right = 473.0
 margin_bottom = 355.0
-rect_pivot_offset = Vector2( 0, 0 )
-rect_clip_content = false
-mouse_filter = 2
-mouse_default_cursor_shape = 0
-size_flags_horizontal = 1
-size_flags_vertical = 4
 text = "Attack
 each investigator must pass a Will(+1) check or lose 1 gate trophy.
 Any investigator with no gate trophies left is devouered. This check's modifier decreases by 1 each turn. (+0 the 2nd turn, -1 the 3rd turn, etc)"
 autowrap = true
-percent_visible = 1.0
-lines_skipped = 0
-max_lines_visible = -1
-
 
